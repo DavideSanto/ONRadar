@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A732AF094C737141B7475BA /* Pods_ONRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF4B6C5F678B21368FC751 /* Pods_ONRadar.framework */; };
 		AA0DCA1122C0BF9E0089BB18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA1022C0BF9E0089BB18 /* AppDelegate.swift */; };
-		AA0DCA1322C0BF9E0089BB18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA1222C0BF9E0089BB18 /* ViewController.swift */; };
 		AA0DCA1622C0BF9E0089BB18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0DCA1422C0BF9E0089BB18 /* Main.storyboard */; };
 		AA0DCA1822C0BF9F0089BB18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0DCA1722C0BF9F0089BB18 /* Assets.xcassets */; };
 		AA0DCA1B22C0BF9F0089BB18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0DCA1922C0BF9F0089BB18 /* LaunchScreen.storyboard */; };
+		AA0DCA2522C0C6900089BB18 /* RadarSwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA2422C0C6900089BB18 /* RadarSwipeTableViewController.swift */; };
+		AA0DCA2722C0C6BE0089BB18 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA2622C0C6BE0089BB18 /* RadarViewController.swift */; };
+		AA0DCA2A22C0CA1D0089BB18 /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA2922C0CA1D0089BB18 /* Radar.swift */; };
+		AA0DCA2C22C0CBCA0089BB18 /* mmIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0DCA2B22C0CBCA0089BB18 /* mmIC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73BF4B6C5F678B21368FC751 /* Pods_ONRadar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ONRadar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0DCA0D22C0BF9E0089BB18 /* ONRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ONRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0DCA1022C0BF9E0089BB18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA0DCA1222C0BF9E0089BB18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA0DCA1522C0BF9E0089BB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA0DCA1722C0BF9F0089BB18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0DCA1A22C0BF9F0089BB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA0DCA1C22C0BFA00089BB18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0DCA2422C0C6900089BB18 /* RadarSwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarSwipeTableViewController.swift; sourceTree = "<group>"; };
+		AA0DCA2622C0C6BE0089BB18 /* RadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
+		AA0DCA2922C0CA1D0089BB18 /* Radar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
+		AA0DCA2B22C0CBCA0089BB18 /* mmIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mmIC.swift; sourceTree = "<group>"; };
+		C799D527FC780A38C14E19FB /* Pods-ONRadar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONRadar.debug.xcconfig"; path = "Target Support Files/Pods-ONRadar/Pods-ONRadar.debug.xcconfig"; sourceTree = "<group>"; };
+		F2230A56564EAB7D9DE43F8C /* Pods-ONRadar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONRadar.release.xcconfig"; path = "Target Support Files/Pods-ONRadar/Pods-ONRadar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A732AF094C737141B7475BA /* Pods_ONRadar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D8ACE2AB5DA08B8DDF94E46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73BF4B6C5F678B21368FC751 /* Pods_ONRadar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5736266C4184C415626A4C24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C799D527FC780A38C14E19FB /* Pods-ONRadar.debug.xcconfig */,
+				F2230A56564EAB7D9DE43F8C /* Pods-ONRadar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA0DCA0422C0BF9E0089BB18 = {
 			isa = PBXGroup;
 			children = (
+				AA0DCA2822C0C9F90089BB18 /* Data Model */,
 				AA0DCA0F22C0BF9E0089BB18 /* ONRadar */,
 				AA0DCA0E22C0BF9E0089BB18 /* Products */,
+				5736266C4184C415626A4C24 /* Pods */,
+				1D8ACE2AB5DA08B8DDF94E46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +86,23 @@
 			isa = PBXGroup;
 			children = (
 				AA0DCA1022C0BF9E0089BB18 /* AppDelegate.swift */,
-				AA0DCA1222C0BF9E0089BB18 /* ViewController.swift */,
+				AA0DCA2422C0C6900089BB18 /* RadarSwipeTableViewController.swift */,
+				AA0DCA2622C0C6BE0089BB18 /* RadarViewController.swift */,
 				AA0DCA1422C0BF9E0089BB18 /* Main.storyboard */,
 				AA0DCA1722C0BF9F0089BB18 /* Assets.xcassets */,
 				AA0DCA1922C0BF9F0089BB18 /* LaunchScreen.storyboard */,
 				AA0DCA1C22C0BFA00089BB18 /* Info.plist */,
 			);
 			path = ONRadar;
+			sourceTree = "<group>";
+		};
+		AA0DCA2822C0C9F90089BB18 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA0DCA2922C0CA1D0089BB18 /* Radar.swift */,
+				AA0DCA2B22C0CBCA0089BB18 /* mmIC.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0DCA1F22C0BFA00089BB18 /* Build configuration list for PBXNativeTarget "ONRadar" */;
 			buildPhases = (
+				C34ABB3B0C747089CE6182FD /* [CP] Check Pods Manifest.lock */,
 				AA0DCA0922C0BF9E0089BB18 /* Sources */,
 				AA0DCA0A22C0BF9E0089BB18 /* Frameworks */,
 				AA0DCA0B22C0BF9E0089BB18 /* Resources */,
+				6D017BCC84B9C994EAF4BF3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +173,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D017BCC84B9C994EAF4BF3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ONRadar/Pods-ONRadar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ONRadar/Pods-ONRadar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C34ABB3B0C747089CE6182FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ONRadar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA0DCA0922C0BF9E0089BB18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0DCA1322C0BF9E0089BB18 /* ViewController.swift in Sources */,
+				AA0DCA2A22C0CA1D0089BB18 /* Radar.swift in Sources */,
 				AA0DCA1122C0BF9E0089BB18 /* AppDelegate.swift in Sources */,
+				AA0DCA2C22C0CBCA0089BB18 /* mmIC.swift in Sources */,
+				AA0DCA2522C0C6900089BB18 /* RadarSwipeTableViewController.swift in Sources */,
+				AA0DCA2722C0C6BE0089BB18 /* RadarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +379,7 @@
 		};
 		AA0DCA2022C0BFA00089BB18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C799D527FC780A38C14E19FB /* Pods-ONRadar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +398,7 @@
 		};
 		AA0DCA2122C0BFA00089BB18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2230A56564EAB7D9DE43F8C /* Pods-ONRadar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
