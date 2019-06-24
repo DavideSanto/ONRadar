@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GMy-yz-VzI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GMy-yz-VzI" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMy-yz-VzI" id="yke-hx-y7f">
@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="QmS-05-TVJ" id="t7N-S2-cml"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zhr-8Y-As8"/>
+                    <navigationItem key="navigationItem" id="zhr-8Y-As8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="y1D-3T-d6m">
+                            <connections>
+                                <action selector="addProjectButtonPressed:" destination="QmS-05-TVJ" id="QOw-5x-3ue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Nk3-bj-Gpr" kind="show" identifier="Radar" id="fOW-3M-QiS"/>
                     </connections>

@@ -21,7 +21,7 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
-        guard orientation == .right else { return nil }
+        guard orientation == .right else { return nil }  // Only swipingright to left is managed. Action of Deletion is activated
         
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             print("Deteled Project")
@@ -34,40 +34,78 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
         return [deleteAction]
     }
     
+    // Manage Expansion and Transition of Swipe...without this fucnbtion DELETING DOES NOT WORK in the VIEW (but does in the Realm DB)
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .drag
+        return options
+    }
+    
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("FileManager Default Url location: \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))")
-        // loadProjects()
         
-        tableView.rowHeight = 70.0
+        
+        loadRadarProjects()
+        
+        tableView.rowHeight = 65.0
+        self.title = "Radar Projects in Realm Database"
+        navigationController?.title = "Radar Projects in DB"
+        
         
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view data source and Cell Configuration functions
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        // Only one sections for now....we may have to update for multiple sections if we merge multiple product (NRxx) under one app
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // Numbers of Saved/stored projects
+        return radarProjects?.count ?? 1
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         // get a handle to the Swiping Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)  as! SwipeTableViewCell
+        
+        cell.delegate = self
+        
+        cell.textLabel?.text = radarProjects?[indexPath.row].projectName   // Populating Cell row with Saved Project name
 
         return cell
     }
-    */
 
+
+    @IBAction func addProjectButtonPressed(_ sender: UIBarButtonItem) {
+    
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "New Radar Project name:", message: "Add New Configuration", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Radar Project", style: .default, handler: { (action) in
+            let newRadarProject = Radar()
+            newRadarProject.projectName = textField.text!
+            newRadarProject.dateCreated = Date()
+            self.saveRadarProjects(project: newRadarProject)
+        })
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Add a new Project"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    
+    
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -102,6 +140,25 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
         return true
     }
     */
+    
+    //MARK: - Auxiliary Functions 9Save, Load Projects)
+    
+    func saveRadarProjects(project: Radar) {
+        do {
+            try realm.write {
+                realm.add(project)
+            }
+        } catch {
+            print("Failed in saving Project into Realm DB \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadRadarProjects() {
+        radarProjects = realm.objects(Radar.self)
+        tableView.reloadData()
+    }
+    
 
     func updateModel(at indexPath: IndexPath) {
             print("TO DO Update of Realm with Saving of Real")
