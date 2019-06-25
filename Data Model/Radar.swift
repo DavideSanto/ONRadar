@@ -13,6 +13,8 @@ class Radar : Object {
     
     @objc dynamic var projectName : String = ""  //Can indicate Customer or Project names
     @objc dynamic var dateCreated : Date?
+    @objc dynamic var dateUpdated : Date?
+    
     let radarProjects = List<mmICs>() // Empty List of mmIC perProject
     
 }

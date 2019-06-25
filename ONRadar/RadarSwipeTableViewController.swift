@@ -53,10 +53,14 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
         loadRadarProjects()
         
         tableView.rowHeight = 65.0
-        self.title = "Radar Projects in Realm Database"
-        navigationController?.title = "Radar Projects in DB"
+        self.title = "Radar Active Projects"
+        tableView.reloadData()
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadRadarProjects()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source and Cell Configuration functions
@@ -75,10 +79,16 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          // get a handle to the Swiping Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)  as! SwipeTableViewCell
-        
         cell.delegate = self
         
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .full
+        let dateString = dateFormatter.string(from: radarProjects?[indexPath.row].dateUpdated ?? currentDate)
+        
         cell.textLabel?.text = radarProjects?[indexPath.row].projectName   // Populating Cell row with Saved Project name
+       cell.detailTextLabel?.text = dateString
 
         return cell
     }
@@ -87,12 +97,20 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
     @IBAction func addProjectButtonPressed(_ sender: UIBarButtonItem) {
     
         var textField = UITextField()
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.timeStyle = .full
+        dateFormatter.dateStyle = .full
+        //let dateString = dateFormatter.string(from: currentDate)
+        
         
         let alert = UIAlertController(title: "New Radar Project name:", message: "Add New Configuration", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Radar Project", style: .default, handler: { (action) in
             let newRadarProject = Radar()
             newRadarProject.projectName = textField.text!
-            newRadarProject.dateCreated = Date()
+            newRadarProject.dateCreated = currentDate
+            newRadarProject.dateUpdated = currentDate
             self.saveRadarProjects(project: newRadarProject)
         })
         
@@ -106,14 +124,8 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
     
     
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+    
+   
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -140,6 +152,20 @@ class RadarSwipeTableViewController: UITableViewController, SwipeTableViewCellDe
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "Radar", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! RadarViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedProject = radarProjects?[indexPath.row]
+        }
+        
+    }
+    
     
     //MARK: - Auxiliary Functions 9Save, Load Projects)
     

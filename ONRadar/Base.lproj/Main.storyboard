@@ -19,12 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GMy-yz-VzI" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Avj-LP-sAB" detailTextLabel="v6E-Op-7mc" style="IBUITableViewCellStyleSubtitle" id="GMy-yz-VzI" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMy-yz-VzI" id="yke-hx-y7f">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Avj-LP-sAB">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v6E-Op-7mc">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -48,20 +64,196 @@
             </objects>
             <point key="canvasLocation" x="1073.913043478261" y="156.69642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--mmIC Configuration-->
         <scene sceneID="63B-B4-aQb">
             <objects>
-                <viewController id="Nk3-bj-Gpr" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" title="test" automaticallyAdjustsScrollViewInsets="NO" id="Nk3-bj-Gpr" userLabel="mmIC Configuration" customClass="RadarViewController" customModule="ONRadar" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GIu-dL-zTV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="utD-nx-Ipl">
+                                <rect key="frame" x="52" y="62" width="281" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="NsA-d7-tM6">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="250"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="# TX Antennae" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtD-PV-P7q">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" label="# TX Antennae"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="# RX Antennae" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghu-O1-qLT">
+                                                <rect key="frame" x="0.0" y="61" width="130.5" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" label="# TX Antennae"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Net BW MHz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbT-A9-utV">
+                                                <rect key="frame" x="0.0" y="116" width="113" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" label="# TX Antennae"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Chirp Time us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmo-9W-mXn">
+                                                <rect key="frame" x="0.0" y="171" width="166" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" label="# TX Antennae"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Num Chirp/Frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VET-P4-sXT">
+                                                <rect key="frame" x="0.0" y="226" width="155.5" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" label="# TX Antennae"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Hif-KL-eXh">
+                                        <rect key="frame" x="184" y="0.0" width="97" height="250"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="4" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2t-6z-Rgb" userLabel="NTX">
+                                                <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" hint="4" label="# TX Antennae"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="Cci-pc-DXy"/>
+                                                    <constraint firstAttribute="width" constant="97" id="G5X-us-fwe"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="97" id="Oq5-vX-out"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="97" id="Qmc-Sw-s3l"/>
+                                                    <constraint firstAttribute="height" constant="30" id="SnI-7a-8Wo"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="TKg-N3-jc6"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="XhS-t4-rWx"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="iy8-U5-wig"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="4" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cza-3t-3Xu" userLabel="NRX">
+                                                <rect key="frame" x="0.0" y="55" width="97" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" hint="4" label="# TX Antennae"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="68k-Ez-xfG"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="AR2-Y8-4Uc"/>
+                                                    <constraint firstAttribute="width" constant="97" id="DoI-X6-LBQ"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="dPN-1o-VTY"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="469" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3of-7E-6Fv" userLabel="BW">
+                                                <rect key="frame" x="0.0" y="110" width="97" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" hint="4" label="# TX Antennae"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="97" id="9YB-fz-5Ky"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="MnD-iS-2bq"/>
+                                                    <constraint firstAttribute="height" constant="30" id="gfb-S3-mi4"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="hJ1-wW-mOB"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="40.0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMp-Al-uRc" userLabel="ChirpTime">
+                                                <rect key="frame" x="0.0" y="165" width="97" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" hint="4" label="# TX Antennae"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="FkZ-RN-Skb"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Iet-jn-fiL"/>
+                                                    <constraint firstAttribute="height" constant="30" id="alF-vb-878"/>
+                                                    <constraint firstAttribute="width" constant="97" id="lvc-sp-3ba"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="512" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-by-J3i" userLabel="NumChirps">
+                                                <rect key="frame" x="0.0" y="220" width="97" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" hint="4" label="# TX Antennae"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="738-0l-MR7"/>
+                                                    <constraint firstAttribute="width" constant="97" id="Cle-uh-apV"/>
+                                                    <constraint firstAttribute="height" constant="30" id="qaT-zh-eCH"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="tBS-Qp-px5"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azS-SD-MdH">
+                                <rect key="frame" x="117" y="378" width="151" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <state key="normal" title="Compute">
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="butonComputePressed:" destination="Nk3-bj-Gpr" eventType="touchUpInside" id="dvs-xm-CeW"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Ff-07-bpj">
+                                <rect key="frame" x="105" y="498" width="204.5" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGg-dC-KYg">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrF-16-dZe">
+                                        <rect key="frame" x="0.0" y="38" width="188.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Velocity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dG-5e-1jx">
+                                        <rect key="frame" x="0.0" y="76" width="137" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocity Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feb-qd-eWl">
+                                        <rect key="frame" x="0.0" y="114" width="204.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70545345544815063" green="0.92775934934616089" blue="0.92869859933853149" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MGa-E1-Wx0"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="maxRange" destination="kGg-dC-KYg" id="f9A-BD-4F9"/>
+                        <outlet property="maxVelocity" destination="1dG-5e-1jx" id="1Kz-mm-r1s"/>
+                        <outlet property="nRx" destination="cza-3t-3Xu" id="owd-PP-1Tc"/>
+                        <outlet property="nTx" destination="m2t-6z-Rgb" id="SEb-Z8-3LD"/>
+                        <outlet property="netBw" destination="3of-7E-6Fv" id="wiS-U5-x6I"/>
+                        <outlet property="numChirps" destination="zb2-by-J3i" id="hkB-f2-a22"/>
+                        <outlet property="rangeResolution" destination="CrF-16-dZe" id="ZTR-0r-Heq"/>
+                        <outlet property="totalChirpTime" destination="gMp-Al-uRc" id="eZT-ma-p1y"/>
+                        <outlet property="velocityResolution" destination="feb-qd-eWl" id="LQq-7x-avm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd2-d7-ayc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="154"/>
+            <point key="canvasLocation" x="1949.2753623188407" y="153.34821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCP-0t-1Bb">
